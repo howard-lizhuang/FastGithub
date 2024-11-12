@@ -28,9 +28,9 @@ jobs:
 
     - name: Upload artifacts (if needed)
       uses: actions/upload-artifact@v3  # 如果有需要上传的文件，比如发布后的成果文件等
-      with: 
+      with:
         name: published-files
-        path: 
+        path:
           .\publish\fastgithub_win-x64\*
           .\publish\fastgithub_linux-x64\*
           .\publish\fastgithub_linux-arm64\*
