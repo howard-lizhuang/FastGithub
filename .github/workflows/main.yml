@@ -2,8 +2,7 @@ name: Publish Project
 
 on:
   push:
-    branches:
-      - main  # 可以根据实际情况修改触发的工作流的分支，比如开发分支等
+    branches: ['main']   # 可以根据实际情况修改触发的工作流的分支，比如开发分支等
 
 jobs:
   publish:
