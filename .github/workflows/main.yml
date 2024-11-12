@@ -30,4 +30,5 @@ jobs:
       uses: actions/upload-artifact@v3  # 如果有需要上传的文件，比如发布后的成果文件等
       with: 
         name: published-files
-        path: publish 
+        path: 
+          .\publish\*
