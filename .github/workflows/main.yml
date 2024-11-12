@@ -28,7 +28,7 @@ jobs:
 
     - name: Upload artifacts (if needed)
       uses: actions/upload-artifact@v3  # 如果有需要上传的文件，比如发布后的成果文件等
-      with: 
+      with: |
         name: published-files
         path: |
           # 根据publish.cmd实际生成的文件路径填写，例如：
