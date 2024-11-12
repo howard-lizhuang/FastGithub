@@ -1,0 +1,37 @@
+name: Publish Project
+
+on:
+  push:
+    branches:
+      - main  # 可以根据实际情况修改触发的工作流的分支，比如开发分支等
+
+jobs:
+  publish:
+    runs-on: windows-latest  # 因为原项目有Windows相关的部署方式，这里先以Windows环境为例
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3  # 检出项目代码
+
+    - name: Setup.NET SDK (if needed)
+      uses: actions/setup-dotnet@v3  # 如果项目是基于.NET的，设置.NET SDK环境
+      with:
+        dotnet-version: '6.0'  # 可以根据项目需求选择合适的.NET版本，这里以.NET 6.0为例
+
+    - name: Restore NuGet packages (if applicable)
+      run: dotnet restore  # 如果项目使用NuGet包，还原NuGet包
+
+    - name: Build project (assumed command)
+      run: dotnet build -c Release  # 假设项目使用dotnet build命令构建，以发布模式构建项目
+
+    - name: Execute publish.cmd
+      run:.\publish.cmd  # 运行publish.cmd文件，执行项目的发布操作
+
+    - name: Upload artifacts (if needed)
+      uses: actions/upload-artifact@v3  # 如果有需要上传的文件，比如发布后的成果文件等
+      with:
+        name: published-files
+        path: |
+          # 根据publish.cmd实际生成的文件路径填写，例如：
+         .\bin\Release\*
+          # 如果有其他相关文件也一并列出
