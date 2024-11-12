@@ -22,7 +22,7 @@ jobs:
 
     - name: Build project (assumed command)
       run: dotnet build -c Release  # 假设项目使用dotnet build命令构建，以发布模式构建项目
-|
+
     - name: Execute publish.cmd
       run: .\publish.cmd  # 运行publish.cmd文件，执行项目的发布操作
 
@@ -31,8 +31,8 @@ jobs:
       with:
         name: published-files
         path:
-          .\publish\fastgithub_win-x64\*
-          .\publish\fastgithub_linux-x64\*
-          .\publish\fastgithub_linux-arm64\*
-          .\publish\fastgithub_osx-x64\*
-          .\publish\fastgithub_osx-arm64\*
+          - .\publish\fastgithub_win-x64\*
+          - .\publish\fastgithub_linux-x64\*
+          - .\publish\fastgithub_linux-arm64\*
+          - .\publish\fastgithub_osx-x64\*
+          - .\publish\fastgithub_osx-arm64\*
