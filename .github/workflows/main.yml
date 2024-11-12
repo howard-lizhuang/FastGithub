@@ -2,7 +2,7 @@ name: Publish Project
 
 on:
   push:
-    branches: ['main']   # 可以根据实际情况修改触发的工作流的分支，比如开发分支等
+    branches: ['master']   # 可以根据实际情况修改触发的工作流的分支，比如开发分支等
 
 jobs:
   publish:
@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v3  # 如果有需要上传的文件，比如发布后的成果文件等
       with:
         name: published-files
-        path: |
+        path: 
           - .\publish\fastgithub_win-x64\*
           - .\publish\fastgithub_linux-x64\*
           - .\publish\fastgithub_linux-arm64\*
