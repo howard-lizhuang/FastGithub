@@ -26,13 +26,5 @@ jobs:
     - name: Execute publish.cmd
       run: .\publish.cmd  # 运行publish.cmd文件，执行项目的发布操作
 
-    - name: Upload artifacts (if needed)
-      uses: actions/upload-artifact@v3  # 如果有需要上传的文件，比如发布后的成果文件等
-      with:
-        name: published-files
-        path:
-          - .\publish\fastgithub_win-x64\*
-          - .\publish\fastgithub_linux-x64\*
-          - .\publish\fastgithub_linux-arm64\*
-          - .\publish\fastgithub_osx-x64\*
-          - .\publish\fastgithub_osx-arm64\*
+    - name: Execute hello
+      run:  echo "The value of MY_VARIABLE is 123"
