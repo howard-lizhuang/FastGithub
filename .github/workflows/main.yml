@@ -31,4 +31,8 @@ jobs:
       with: 
         name: published-files
         path: 
-          .\publish\*
+          .\publish\fastgithub_win-x64\*
+          .\publish\fastgithub_linux-x64\*
+          .\publish\fastgithub_linux-arm64\*
+          .\publish\fastgithub_osx-x64\*
+          .\publish\fastgithub_osx-arm64\*
